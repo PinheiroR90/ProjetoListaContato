@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(31, 30, 30);
+    color:rgba(255, 255, 255, 0.884);
+}
+.container-xxl{
+    background-color: rgb(31, 30, 30);
+    color:rgba(255, 255, 255, 0.884);
+}
+.text-center{
+    height: 50px;
+    margin-top: 8px;
+}
+.formulario{
+    background-color: rgb(44, 43, 43);
+    color:rgba(255, 255, 255, 0.884);
+    border-radius: 30px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.text-center{
+    color: rgb(255, 68, 0);
+}
+.list{
+    margin-top: 30px;
+}
+.container{
+    width: 90%;
+    border-radius: 20px;
+}
+
+.linha:hover{
+   background-color: rgb(102, 103, 104);
+}
+
