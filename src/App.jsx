@@ -4,7 +4,7 @@ import Contato from "./components/Contato";
 import { v4 as uuidv4 } from "uuid";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAdd, faAddressCard, faCirclePlus, faClapperboard, faPhone, faRemove, faRemoveFormat, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faCirclePlus, faPhone, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 export default function App() {
   //states
@@ -72,8 +72,16 @@ export default function App() {
     let tmp = listaContatos.filter((ctt) => ctt.id !== id);
     setListacontatos(tmp);
   }
+  function editarContato(id, novoContato){
+    const contatoEditado  = setContato.find((contato)=>{
+      return contato.id === id;
+    });
+    console.log(contatoEditado)
+    contatoEditado.content = novoContato;
+  }
 
   return (
+    
     <>
       <div className="container-xxl">
         <div className="row">
@@ -111,7 +119,8 @@ export default function App() {
                 </div>
                 <div className="botoes">
                   <div className="row">
-                    <div className="col text-start ">
+
+                    <div className="col ">
                       <button
                         type="button"
                         className="btn btn-outline-success"
@@ -120,9 +129,8 @@ export default function App() {
                         Adicionar<FontAwesomeIcon icon={faCirclePlus} className="ms-2"/>
                       </button>
                     </div>
-                  
-                  
-                    <div className="col text-end">
+              
+                    <div className="col">
                       <button
                         type="button"
                         className="btn btn-outline-danger"
@@ -131,32 +139,32 @@ export default function App() {
                         Apagar Lista<FontAwesomeIcon icon={faTrash} className="ms-2"/>
                       </button>
                     </div>
-                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+         </div>
+     </div>
 
       <div className="container  list">
         <div className="row">
-        <ul>
-        {listaContatos.map((ctt) => {
-          return (
-            <Contato
-              key={ctt.id}
-              id={ctt.id}
-              name={ctt.name}
-              phone={ctt.phone}
-              remover={removerContato}
-            />
-          );
-        })}
-      </ul>
+            <ul>
+            {listaContatos.map((ctt) => {
+              return (
+                <Contato
+                  key={ctt.id}
+                  id={ctt.id}
+                  name={ctt.name}
+                  phone={ctt.phone}
+                  remover={removerContato}
+                />
+              );
+            })}
+          </ul>  
         </div>
       </div>
      
-    </>
+   </>
   );
 }

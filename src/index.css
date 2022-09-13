@@ -32,5 +32,9 @@ body{
 
 .linha:hover{
    background-color: rgb(102, 103, 104);
+   border-radius: 7px;
+}
+.row{
+    margin-bottom: 9px;
 }
 
